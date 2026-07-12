@@ -4,7 +4,6 @@ SQLAlchemy==2.0.30
 python-dotenv==1.0.1
 gunicorn==22.0.0
 Markdown==3.6
-vedastro==1.0.0
 geopy==2.4.1
 timezonefinder==6.5.0
 pytz==2024.1
