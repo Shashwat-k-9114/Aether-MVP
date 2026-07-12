@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block title %}Your dashboard — Aether{% endblock %}
+{% block body_class %}page-dashboard{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="section dashboard-hero">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Your space</span>
+    <h1 data-reveal data-reveal-delay="80" id="dash-greeting">Welcome back</h1>
+
+    <div class="dash-stats" data-reveal data-reveal-delay="140">
+      <div class="card dash-stat">
+        <span class="text-muted">Chat sessions</span>
+        <strong id="stat-sessions">0</strong>
+      </div>
+      <div class="card dash-stat">
+        <span class="text-muted">Recommendations</span>
+        <strong id="stat-recs">0</strong>
+      </div>
+      <div class="card dash-stat">
+        <span class="text-muted">Upcoming sessions</span>
+        <strong id="stat-bookings">0</strong>
+      </div>
+      <div class="card dash-stat">
+        <span class="text-muted">Janampatri</span>
+        <strong id="stat-janampatri">—</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top:0;">
+  <div class="container dashboard-grid">
+
+    <div class="stack" style="gap: var(--sp-5);">
+      <div class="card" data-reveal>
+        <div class="dash-card-head">
+          <h2>Saved recommendations</h2>
+          <a href="{{ url_for('main.recommendations_page') }}" class="btn-text btn">View all</a>
+        </div>
+        <div id="dash-saved-recs" class="dash-list"></div>
+      </div>
+
+      <div class="card" data-reveal data-reveal-delay="60">
+        <div class="dash-card-head">
+          <h2>Upcoming sessions</h2>
+        </div>
+        <div id="dash-bookings" class="dash-list"></div>
+      </div>
+    </div>
+
+    <div class="card" data-reveal data-reveal-delay="120">
+      <div class="dash-card-head">
+        <h2>Journal</h2>
+      </div>
+
+      <form id="journal-form" class="journal-form">
+        <textarea id="journal-content" placeholder="What's present for you today?" rows="3" required></textarea>
+        <div class="journal-form-row">
+          <select id="journal-mood">
+            <option value="">Mood (optional)</option>
+            <option value="calm">Calm</option>
+            <option value="anxious">Anxious</option>
+            <option value="hopeful">Hopeful</option>
+            <option value="tired">Tired</option>
+            <option value="grateful">Grateful</option>
+          </select>
+          <button type="submit" class="btn btn-primary btn-sm">Add entry</button>
+        </div>
+      </form>
+
+      <div id="dash-journal" class="dash-list journal-list"></div>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/page/dashboard.js') }}"></script>
+{% endblock %}

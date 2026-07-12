@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Conversation — Aether{% endblock %}
+{% block body_class %}page-chat{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/chat.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="chat-shell">
+  <div class="container chat-container">
+
+    <div class="chat-panel glass">
+      <header class="chat-header">
+        <div class="chat-header-info">
+          <span class="chat-header-avatar" aria-hidden="true">✦</span>
+          <div>
+            <h1>Aether</h1>
+            <span class="chat-header-status" id="chat-status">Listening</span>
+          </div>
+        </div>
+        <span class="pill" id="chat-topic-pill">opening</span>
+      </header>
+
+      <div class="chat-disclaimer">
+        Aether offers reflective guidance and does not diagnose medical or mental health conditions.
+      </div>
+
+      <div class="chat-messages" id="chat-messages" aria-live="polite"></div>
+
+      <div class="chat-ready-banner" id="chat-ready-banner" hidden>
+        <p>You've shared enough for Aether to put together your reflections.</p>
+        <a href="{{ url_for('main.recommendations_page') }}" class="btn btn-primary btn-sm">See my recommendations</a>
+      </div>
+
+      <form class="chat-input-row" id="chat-form">
+        <textarea id="chat-input" placeholder="Share what's on your mind…" rows="1" required></textarea>
+        <button type="submit" class="btn btn-primary chat-send" aria-label="Send message">↑</button>
+      </form>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="{{ url_for('static', filename='js/page/chat.js') }}"></script>
+{% endblock %}

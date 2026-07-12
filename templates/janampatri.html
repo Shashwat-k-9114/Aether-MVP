@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block title %}Your Janampatri — Aether{% endblock %}
+{% block body_class %}page-janampatri{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/janampatri.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="section janampatri-hero">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Your reflection chart</span>
+    <h1 class="janampatri-title" data-reveal data-reveal-delay="80">
+      <span id="jp-greeting">Your Janampatri</span>
+    </h1>
+    <p class="text-muted janampatri-sub" data-reveal data-reveal-delay="140">
+      Generated from your birth details — a starting point for reflection, not a precise prediction.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+
+    <div class="jp-sign-grid" data-reveal>
+      <div class="card jp-sign-card">
+        <span class="jp-sign-label">Moon Sign</span>
+        <strong id="jp-moon-sign">—</strong>
+      </div>
+      <div class="card jp-sign-card">
+        <span class="jp-sign-label">Sun Sign</span>
+        <strong id="jp-sun-sign">—</strong>
+      </div>
+      <div class="card jp-sign-card">
+        <span class="jp-sign-label">Ascendant</span>
+        <strong id="jp-ascendant">—</strong>
+      </div>
+      <div class="card jp-sign-card">
+        <span class="jp-sign-label">Nakshatra</span>
+        <strong id="jp-nakshatra">—</strong>
+      </div>
+      <div class="card jp-sign-card">
+        <span class="jp-sign-label">Dominant Planet</span>
+        <strong id="jp-dominant-planet">—</strong>
+      </div>
+    </div>
+
+    <div class="jp-two-col">
+      <div class="card jp-wheel-card" data-reveal>
+        <div class="jp-card-head">
+          <h2>Planetary positions</h2>
+          <p class="text-muted">Where each planet sits in your chart right now.</p>
+        </div>
+        <div class="jp-wheel" id="jp-wheel">
+          <div class="jp-wheel-ring"></div>
+          <div class="jp-wheel-ring jp-wheel-ring-inner"></div>
+          <div class="jp-wheel-center">✦</div>
+        </div>
+        <ul class="jp-wheel-legend" id="jp-wheel-legend"></ul>
+      </div>
+
+      <div class="stack" style="gap: var(--sp-5);">
+        <div class="card" data-reveal data-reveal-delay="60">
+          <div class="jp-card-head">
+            <h2>Doshas</h2>
+            <p class="text-muted">Your relative balance of Vata, Pitta and Kapha.</p>
+          </div>
+          <div class="jp-dosha-row">
+            <div class="jp-donut" id="jp-donut"></div>
+            <ul class="jp-legend" id="jp-dosha-legend"></ul>
+          </div>
+        </div>
+
+        <div class="card" data-reveal data-reveal-delay="120">
+          <div class="jp-card-head">
+            <h2>Elements</h2>
+            <p class="text-muted">Fire, Earth, Air and Water in your chart.</p>
+          </div>
+          <div id="jp-elements" class="jp-elements"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jp-two-col">
+      <div class="card" data-reveal>
+        <div class="jp-card-head">
+          <h2>Lucky numbers &amp; colors</h2>
+        </div>
+        <div class="jp-lucky-numbers" id="jp-lucky-numbers"></div>
+        <div class="jp-lucky-colors" id="jp-lucky-colors"></div>
+      </div>
+
+      <div class="card" data-reveal data-reveal-delay="60">
+        <div class="jp-card-head">
+          <h2>Strengths &amp; challenges</h2>
+        </div>
+        <div class="jp-sc-grid">
+          <div>
+            <span class="pill" style="border-color: rgba(71,229,188,0.3); color: var(--accent);">Strengths</span>
+            <ul class="jp-list" id="jp-strengths"></ul>
+          </div>
+          <div>
+            <span class="pill" style="border-color: rgba(124,92,255,0.35); color: var(--primary);">Challenges</span>
+            <ul class="jp-list" id="jp-challenges"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="jp-cta card glass" data-reveal>
+      <div>
+        <h2>Ready to go deeper?</h2>
+        <p class="text-muted">A short guided conversation will help Aether recommend healing modalities that actually fit your life.</p>
+      </div>
+      <a href="{{ url_for('main.chat_page') }}" class="btn btn-primary">Begin the conversation</a>
+    </div>
+  </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/page/janampatri.js') }}"></script>
+{% endblock %}

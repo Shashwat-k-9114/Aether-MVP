@@ -1,0 +1,237 @@
+{% extends "base.html" %}
+
+{% block title %}Aether — Reconnect with yourself through guided wisdom{% endblock %}
+{% block body_class %}page-landing{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/landing.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+  <div class="cosmic-bg" id="hero-cosmos" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="container hero-inner">
+    <span class="eyebrow" data-reveal>Alternate healing, thoughtfully guided</span>
+    <h1 class="hero-title" data-reveal data-reveal-delay="80">
+      Your healing journey<br> begins with <span class="text-gradient">understanding.</span>
+    </h1>
+    <p class="hero-sub" data-reveal data-reveal-delay="160">
+      AI-guided holistic wellness powered by conversation, reflection and ancient wisdom.
+    </p>
+    <div class="hero-actions" data-reveal data-reveal-delay="240">
+      <a href="{{ url_for('main.onboarding_page') }}" class="btn btn-primary">Begin Journey</a>
+      <a href="#how-it-works" class="btn btn-ghost">See how it works</a>
+    </div>
+
+    <div class="hero-card glass" data-reveal data-reveal-delay="320">
+      <div class="hero-card-row">
+        <div>
+          <span class="hero-card-label">Today's reflection</span>
+          <p class="hero-card-quote">"Notice where your energy settles when the day finally goes quiet."</p>
+        </div>
+        <span class="hero-card-pulse" aria-hidden="true"></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-scroll-cue" aria-hidden="true"><span></span></div>
+</section>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">What Aether does</span>
+      <h2>A calm, transparent path to alternate healing</h2>
+      <p>No generic chatbot, no vague predictions — every step is explained, and every recommendation tells you why.</p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="card feature-card" data-reveal>
+        <div class="feature-icon" data-icon="chart"></div>
+        <h3>Your reflection chart</h3>
+        <p class="text-muted">A grounded starting point built from your birth details — moon, sun, ascendant, doshas and elemental balance.</p>
+      </article>
+      <article class="card feature-card" data-reveal data-reveal-delay="80">
+        <div class="feature-icon" data-icon="chat"></div>
+        <h3>A conversation, not a form</h3>
+        <p class="text-muted">Aether asks about your life gradually — career, sleep, energy, purpose — the way a thoughtful guide would.</p>
+      </article>
+      <article class="card feature-card" data-reveal data-reveal-delay="160">
+        <div class="feature-icon" data-icon="spark"></div>
+        <h3>Recommendations that explain themselves</h3>
+        <p class="text-muted">Every modality we suggest comes with a confidence score and the specific reasons it fits you.</p>
+      </article>
+      <article class="card feature-card" data-reveal data-reveal-delay="240">
+        <div class="feature-icon" data-icon="hand"></div>
+        <h3>Real practitioners, when you're ready</h3>
+        <p class="text-muted">Connect with vetted healers matched to your recommendations — no pressure, no obligation.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section how-section" id="how-it-works">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">The journey</span>
+      <h2>Four steps, at your own pace</h2>
+      <p>Nothing is instant or automated-feeling — each step builds on the last, like a chart being slowly filled in.</p>
+    </div>
+
+    <div class="how-thread" data-reveal>
+      <svg viewBox="0 0 1000 4" preserveAspectRatio="none" class="how-thread-line" aria-hidden="true">
+        <line x1="0" y1="2" x2="1000" y2="2" />
+      </svg>
+      <div class="how-steps">
+        <div class="how-step">
+          <span class="how-num">01</span>
+          <h3>Share your birth details</h3>
+          <p class="text-muted">Name, date, time and place of birth — used to generate your reflection chart.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num">02</span>
+          <h3>Talk it through</h3>
+          <p class="text-muted">A guided conversation gently explores your career, relationships, stress and sleep.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num">03</span>
+          <h3>Receive your reflections</h3>
+          <p class="text-muted">See ranked healing modalities, each with a clear "why it fits" explanation.</p>
+        </div>
+        <div class="how-step">
+          <span class="how-num">04</span>
+          <h3>Connect, if it feels right</h3>
+          <p class="text-muted">Browse matched practitioners and book a session — entirely at your pace.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="healing">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Healing categories</span>
+      <h2>Six modalities, honestly described</h2>
+      <p>Every category below is scored transparently against your conversation — nothing here is guesswork dressed up as certainty.</p>
+    </div>
+
+    <div class="healing-grid">
+      <article class="healing-card glass" data-reveal>
+        <span class="healing-glyph" aria-hidden="true">✦</span>
+        <h3>Reiki</h3>
+        <p class="text-muted">A gentle, hands-off energy practice for deep relaxation and easing physical tension.</p>
+      </article>
+      <article class="healing-card glass" data-reveal data-reveal-delay="60">
+        <span class="healing-glyph" aria-hidden="true">〜</span>
+        <h3>Sound Healing</h3>
+        <p class="text-muted">Layered tones from singing bowls and gongs to support rest and a meditative state.</p>
+      </article>
+      <article class="healing-card glass" data-reveal data-reveal-delay="120">
+        <span class="healing-glyph" aria-hidden="true">◡</span>
+        <h3>Breathwork</h3>
+        <p class="text-muted">Guided breathing patterns that support nervous-system regulation and clarity.</p>
+      </article>
+      <article class="healing-card glass" data-reveal data-reveal-delay="180">
+        <span class="healing-glyph" aria-hidden="true">◈</span>
+        <h3>Aura Cleansing</h3>
+        <p class="text-muted">A ritual-like session focused on clearing and re-aligning your personal energy.</p>
+      </article>
+      <article class="healing-card glass" data-reveal data-reveal-delay="240">
+        <span class="healing-glyph" aria-hidden="true">↺</span>
+        <h3>Past Life Regression</h3>
+        <p class="text-muted">Guided, hypnotherapy-style reflection exploring recurring patterns and fears.</p>
+      </article>
+      <article class="healing-card glass" data-reveal data-reveal-delay="300">
+        <span class="healing-glyph" aria-hidden="true">○</span>
+        <h3>Meditation</h3>
+        <p class="text-muted">A sustainable sitting practice for grounded, ongoing self-awareness.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section ai-preview-section">
+  <div class="container ai-preview-grid">
+    <div class="section-head" data-reveal style="margin-bottom: 0;">
+      <span class="eyebrow">Inside the conversation</span>
+      <h2>Warm, unhurried, never dramatic</h2>
+      <p>Aether never claims certainty and always encourages professional care where it's needed. Here's a glimpse of the tone.</p>
+      <a href="{{ url_for('main.onboarding_page') }}" class="btn btn-primary" style="margin-top: var(--sp-6);">Start your conversation</a>
+    </div>
+
+    <div class="chat-mock glass" data-reveal data-reveal-delay="100">
+      <div class="chat-mock-bubble ai">
+        <span class="chat-mock-avatar" aria-hidden="true">✦</span>
+        <p>What brings you here today? Take your time — there's no wrong answer.</p>
+      </div>
+      <div class="chat-mock-bubble user">
+        <p>Work has felt heavy lately. I can't seem to switch off in the evenings.</p>
+      </div>
+      <div class="chat-mock-bubble ai">
+        <span class="chat-mock-avatar" aria-hidden="true">✦</span>
+        <p>Thank you for sharing that — it helps me understand you a little better. When stress shows up for you, where do you usually feel it — in your body, your mind, or both?</p>
+      </div>
+      <div class="chat-mock-typing"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section testimonial-section">
+  <div class="container">
+    <div class="section-head" data-reveal>
+      <span class="eyebrow">Early reflections</span>
+      <h2>What people noticed first</h2>
+    </div>
+    <div class="testimonial-grid">
+      <blockquote class="card testimonial" data-reveal>
+        <p>"I expected a quiz. Instead it felt like it actually listened before suggesting anything."</p>
+        <cite>— Early access user, Bengaluru</cite>
+      </blockquote>
+      <blockquote class="card testimonial" data-reveal data-reveal-delay="80">
+        <p>"The 'why it fits' explanations made the recommendations feel earned, not random."</p>
+        <cite>— Early access user, London</cite>
+      </blockquote>
+      <blockquote class="card testimonial" data-reveal data-reveal-delay="160">
+        <p>"Calm design, no pressure to book anything. That alone made me trust it more."</p>
+        <cite>— Early access user, Toronto</cite>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq">
+  <div class="container faq-grid">
+    <div class="section-head" data-reveal style="margin-bottom: 0;">
+      <span class="eyebrow">Good to know</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list" data-reveal>
+      <details class="faq-item">
+        <summary>Does Aether diagnose medical or mental health conditions?</summary>
+        <p>No. Aether is a reflective wellness tool, not a medical or mental health service. If you mention illness or a diagnosis, the conversation will gently point you toward a qualified doctor or therapist.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is the Janampatri astronomically accurate?</summary>
+        <p>In this version, your reflection chart is a realistic placeholder generated consistently from your birth details — it's meant to spark reflection, not serve as precise astrology.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How are recommendations decided?</summary>
+        <p>Your conversation is scored transparently against each modality's typical themes. You'll always see a confidence score and the specific reasons behind every suggestion.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Are practitioners vetted?</summary>
+        <p>Every practitioner listed includes their experience, specialization, languages and rating so you can make an informed choice before booking.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/page/landing.js') }}"></script>
+{% endblock %}

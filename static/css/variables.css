@@ -1,0 +1,91 @@
+/* ==========================================================================
+   Aether — Design Tokens
+   Single source of truth for color, type, spacing, motion and elevation.
+   ========================================================================== */
+
+:root {
+  /* --- Color: surface --- */
+  --bg: #05060A;
+  --bg-soft: #090B12;
+  --card: #0B1020;
+  --card-raised: #101528;
+  --glass: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-strong: rgba(255, 255, 255, 0.09);
+  --hairline: rgba(255, 255, 255, 0.07);
+
+  /* --- Color: brand --- */
+  --primary: #7C5CFF;
+  --primary-dim: #6247D9;
+  --accent: #47E5BC;
+  --accent-dim: #34B896;
+  --gradient: linear-gradient(135deg, #7C5CFF 0%, #47E5BC 100%);
+  --gradient-soft: linear-gradient(135deg, rgba(124, 92, 255, 0.16) 0%, rgba(71, 229, 188, 0.16) 100%);
+
+  /* --- Color: text --- */
+  --text: #F8FAFC;
+  --muted: #94A3B8;
+  --muted-dim: #64748B;
+
+  /* --- Color: semantic --- */
+  --success: #47E5BC;
+  --warning: #F5B759;
+  --danger: #FF6B6B;
+
+  /* --- Type --- */
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --fs-xs: 0.75rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.375rem;
+  --fs-xl: 1.75rem;
+  --fs-2xl: 2.25rem;
+  --fs-3xl: 3rem;
+  --fs-4xl: 4rem;
+  --fs-5xl: 5.5rem;
+
+  /* --- Spacing scale (4px base) --- */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: 4rem;
+  --sp-9: 6rem;
+  --sp-10: 9rem;
+
+  /* --- Radius --- */
+  --r-sm: 8px;
+  --r-md: 14px;
+  --r-lg: 22px;
+  --r-full: 999px;
+
+  /* --- Elevation --- */
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 12px 40px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 60px rgba(124, 92, 255, 0.25);
+
+  /* --- Motion --- */
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast: 0.2s;
+  --dur-base: 0.4s;
+  --dur-slow: 0.8s;
+
+  /* --- Layout --- */
+  --container: 1180px;
+  --nav-h: 84px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0.001s;
+    --dur-base: 0.001s;
+    --dur-slow: 0.001s;
+  }
+}

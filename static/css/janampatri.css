@@ -1,0 +1,136 @@
+.janampatri-hero { padding-top: calc(var(--nav-h) + var(--sp-6)); padding-bottom: var(--sp-4); }
+.janampatri-title { font-size: clamp(var(--fs-2xl), 5vw, var(--fs-4xl)); margin-top: var(--sp-3); }
+.janampatri-sub { margin-top: var(--sp-3); max-width: 560px; }
+
+/* Sign cards */
+.jp-sign-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--sp-4);
+  margin-bottom: var(--sp-6);
+}
+.jp-sign-card { display: flex; flex-direction: column; gap: var(--sp-2); padding: var(--sp-5); }
+.jp-sign-label { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.jp-sign-card strong { font-family: var(--font-display); font-size: var(--fs-lg); }
+
+@media (max-width: 960px) { .jp-sign-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 640px) { .jp-sign-grid { grid-template-columns: 1fr 1fr; } }
+
+/* Two column layout */
+.jp-two-col {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: var(--sp-5);
+  margin-bottom: var(--sp-5);
+}
+@media (max-width: 960px) { .jp-two-col { grid-template-columns: 1fr; } }
+
+.jp-card-head { margin-bottom: var(--sp-5); }
+.jp-card-head h2 { font-size: var(--fs-lg); }
+.jp-card-head p { margin-top: var(--sp-2); font-size: var(--fs-sm); }
+
+/* Planetary wheel */
+.jp-wheel {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
+  margin-inline: auto;
+}
+.jp-wheel-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px dashed var(--glass-border);
+}
+.jp-wheel-ring-inner { inset: 18%; border-style: solid; border-color: var(--hairline); }
+.jp-wheel-center {
+  position: absolute;
+  inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-size: var(--fs-lg);
+  color: var(--accent);
+}
+.jp-planet-dot {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 34px; height: 34px;
+  margin: -17px 0 0 -17px;
+  border-radius: 50%;
+  background: var(--card-raised);
+  border: 1px solid var(--glass-border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.65rem;
+  font-family: var(--font-display);
+  color: var(--text);
+  transition: transform var(--dur-fast), border-color var(--dur-fast);
+}
+.jp-planet-dot:hover { border-color: var(--primary); transform: scale(1.15); z-index: 2; }
+
+.jp-wheel-legend {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+  font-size: var(--fs-xs);
+  color: var(--muted);
+}
+.jp-wheel-legend li strong { color: var(--text); display: block; font-family: var(--font-display); }
+
+/* Dosha donut */
+.jp-dosha-row { display: flex; align-items: center; gap: var(--sp-6); }
+.jp-donut {
+  flex-shrink: 0;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  position: relative;
+}
+.jp-donut::after {
+  content: '';
+  position: absolute;
+  inset: 22%;
+  border-radius: 50%;
+  background: var(--card);
+}
+.jp-legend { display: flex; flex-direction: column; gap: var(--sp-3); font-size: var(--fs-sm); }
+.jp-legend li { display: flex; align-items: center; gap: var(--sp-3); }
+.jp-legend .dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
+
+/* Elements */
+.jp-elements { display: flex; flex-direction: column; gap: var(--sp-4); }
+.jp-element-row { display: grid; grid-template-columns: 70px 1fr 40px; align-items: center; gap: var(--sp-3); font-size: var(--fs-sm); }
+.jp-element-track { height: 6px; border-radius: var(--r-full); background: var(--hairline); overflow: hidden; }
+.jp-element-fill { height: 100%; border-radius: var(--r-full); background: var(--gradient); }
+
+/* Lucky numbers / colors */
+.jp-lucky-numbers { display: flex; gap: var(--sp-3); flex-wrap: wrap; margin-bottom: var(--sp-5); }
+.jp-lucky-number {
+  width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--card-raised);
+  border: 1px solid var(--glass-border);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+}
+.jp-lucky-colors { display: flex; gap: var(--sp-4); flex-wrap: wrap; }
+.jp-lucky-color { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-xs); color: var(--muted); }
+.jp-lucky-color .swatch { width: 18px; height: 18px; border-radius: 50%; border: 1px solid var(--glass-border); }
+
+/* Strengths / challenges */
+.jp-sc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-6); }
+.jp-list { margin-top: var(--sp-4); display: flex; flex-direction: column; gap: var(--sp-3); }
+.jp-list li { font-size: var(--fs-sm); color: var(--muted); padding-left: var(--sp-4); position: relative; }
+.jp-list li::before { content: ''; position: absolute; left: 0; top: 0.55em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+@media (max-width: 560px) { .jp-sc-grid { grid-template-columns: 1fr; gap: var(--sp-5); } }
+
+/* CTA */
+.jp-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-6);
+  padding: var(--sp-7);
+  flex-wrap: wrap;
+}
+.jp-cta h2 { font-size: var(--fs-xl); margin-bottom: var(--sp-2); }

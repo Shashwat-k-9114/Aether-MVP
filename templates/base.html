@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{% block title %}Aether — Reconnect with yourself through guided wisdom{% endblock %}</title>
+  <meta name="description" content="{% block description %}AI-guided holistic wellness powered by conversation, reflection and ancient wisdom.{% endblock %}">
+
+  <link rel="icon" href="{{ url_for('static', filename='icons/favicon.svg') }}" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/variables.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  {% block extra_css %}{% endblock %}
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="page-loader" aria-hidden="true"><span class="loader-mark"></span></div>
+
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="{{ url_for('main.landing') }}" class="brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        Aether
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="{{ url_for('main.landing') }}#features">Features</a>
+        <a href="{{ url_for('main.landing') }}#how-it-works">How it works</a>
+        <a href="{{ url_for('main.experts_page') }}">Practitioners</a>
+        <a href="{{ url_for('main.dashboard_page') }}">Dashboard</a>
+      </nav>
+      <div class="nav-actions">
+        <a href="{{ url_for('main.onboarding_page') }}" class="btn btn-primary btn-sm">Begin Journey</a>
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="{{ url_for('main.landing') }}" class="brand" style="margin-bottom: var(--sp-4);">
+            <span class="brand-mark" aria-hidden="true"></span> Aether
+          </a>
+          <p class="footer-disclaimer">
+            Aether offers reflective, wellness-oriented guidance drawn from alternate healing
+            traditions. It does not diagnose medical or mental health conditions and is not a
+            substitute for a licensed doctor or therapist. If you're in crisis, please contact
+            a local emergency service or helpline.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="stack">
+            <li><a href="{{ url_for('main.landing') }}#healing">Healing categories</a></li>
+            <li><a href="{{ url_for('main.experts_page') }}">Practitioners</a></li>
+            <li><a href="{{ url_for('main.landing') }}#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Journey</h4>
+          <ul class="stack">
+            <li><a href="{{ url_for('main.onboarding_page') }}">Begin Journey</a></li>
+            <li><a href="{{ url_for('main.dashboard_page') }}">Your dashboard</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="stack">
+            <li><a href="#">About</a></li>
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aether. All rights reserved.</span>
+        <span>Made for calmer minds.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+
+  <script src="{{ url_for('static', filename='js/core/api.js') }}"></script>
+  <script src="{{ url_for('static', filename='js/core/app.js') }}"></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

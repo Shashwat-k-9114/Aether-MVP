@@ -1,0 +1,76 @@
+.experts-hero { padding-top: calc(var(--nav-h) + var(--sp-6)); padding-bottom: var(--sp-6); }
+.experts-hero h1 { font-size: clamp(var(--fs-2xl), 5vw, var(--fs-4xl)); margin-top: var(--sp-3); }
+.experts-sub { max-width: 620px; margin-top: var(--sp-3); }
+
+.experts-filter { margin-top: var(--sp-6); display: flex; align-items: center; gap: var(--sp-4); }
+.experts-filter label { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; }
+.experts-filter select {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  padding: 0.6rem 1rem;
+  color: var(--text);
+}
+
+.experts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-5);
+}
+@media (max-width: 960px) { .experts-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) { .experts-grid { grid-template-columns: 1fr; } }
+
+.expert-card {
+  padding: var(--sp-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  animation: step-in var(--dur-base) var(--ease);
+}
+
+.expert-top { display: flex; gap: var(--sp-4); align-items: center; }
+.expert-photo { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 1px solid var(--glass-border); }
+.expert-name { font-family: var(--font-display); font-size: var(--fs-md); }
+.expert-rating { font-size: var(--fs-xs); color: var(--accent); }
+
+.expert-meta-row { display: flex; flex-direction: column; gap: var(--sp-2); font-size: var(--fs-sm); color: var(--muted); }
+
+.expert-tags { display: flex; flex-wrap: wrap; gap: var(--sp-2); }
+
+.expert-bio { font-size: var(--fs-sm); color: var(--muted); }
+
+.expert-footer { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: var(--sp-4); border-top: 1px solid var(--hairline); }
+.expert-price { font-family: var(--font-display); font-size: var(--fs-md); }
+
+/* Booking modal */
+.booking-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: rgba(5,6,10,0.72);
+  backdrop-filter: blur(6px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-5);
+}
+
+.booking-modal {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  padding: var(--sp-7);
+}
+
+.booking-close {
+  position: absolute;
+  top: var(--sp-5); right: var(--sp-5);
+  background: none; border: none;
+  color: var(--muted);
+  font-size: var(--fs-xl);
+  line-height: 1;
+}
+
+#booking-title { margin-bottom: var(--sp-2); }
+#booking-expert-name { margin-bottom: var(--sp-6); }
+#booking-form .field:last-of-type { margin-bottom: var(--sp-6); }

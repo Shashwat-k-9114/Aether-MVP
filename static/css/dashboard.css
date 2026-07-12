@@ -1,0 +1,52 @@
+.dashboard-hero { padding-top: calc(var(--nav-h) + var(--sp-6)); padding-bottom: var(--sp-6); }
+.dashboard-hero h1 { font-size: clamp(var(--fs-2xl), 5vw, var(--fs-3xl)); margin-top: var(--sp-3); }
+
+.dash-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--sp-4); margin-top: var(--sp-7); }
+.dash-stat { display: flex; flex-direction: column; gap: var(--sp-2); padding: var(--sp-5); }
+.dash-stat span { font-size: var(--fs-xs); text-transform: uppercase; letter-spacing: 0.08em; }
+.dash-stat strong { font-family: var(--font-display); font-size: var(--fs-2xl); }
+@media (max-width: 760px) { .dash-stats { grid-template-columns: 1fr 1fr; } }
+
+.dashboard-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: var(--sp-5); align-items: start; }
+@media (max-width: 960px) { .dashboard-grid { grid-template-columns: 1fr; } }
+
+.dash-card-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--sp-5); }
+.dash-card-head h2 { font-size: var(--fs-md); }
+
+.dash-list { display: flex; flex-direction: column; gap: var(--sp-3); }
+.dash-empty { font-size: var(--fs-sm); color: var(--muted-dim); }
+
+.dash-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sp-4);
+  padding: var(--sp-4);
+  background: var(--card-raised);
+  border-radius: var(--r-md);
+  font-size: var(--fs-sm);
+}
+.dash-row-title { font-weight: 500; }
+.dash-row-sub { color: var(--muted); font-size: var(--fs-xs); margin-top: 2px; }
+
+.journal-form { display: flex; flex-direction: column; gap: var(--sp-3); margin-bottom: var(--sp-6); }
+.journal-form textarea {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-md);
+  padding: var(--sp-4);
+  color: var(--text);
+  font-family: var(--font-body);
+  resize: vertical;
+}
+.journal-form-row { display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); }
+.journal-form-row select {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-sm);
+  padding: 0.6rem 0.8rem;
+  color: var(--text);
+}
+
+.journal-list .dash-row { align-items: flex-start; flex-direction: column; gap: var(--sp-2); }
+.journal-mood-pill { align-self: flex-start; }

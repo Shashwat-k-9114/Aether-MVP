@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block title %}Practitioners — Aether{% endblock %}
+{% block body_class %}page-experts{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/experts.css') }}">
+{% endblock %}
+
+{% block content %}
+<section class="section experts-hero">
+  <div class="container">
+    <span class="eyebrow" data-reveal>Practitioners</span>
+    <h1 data-reveal data-reveal-delay="80">Real people, matched to your reflections</h1>
+    <p class="text-muted experts-sub" data-reveal data-reveal-delay="140">
+      Every practitioner lists their experience, languages and specialization up front — book only when it feels right.
+    </p>
+
+    <div class="experts-filter" data-reveal data-reveal-delay="200">
+      <label for="modality-filter" class="text-muted">Filter by modality</label>
+      <select id="modality-filter">
+        <option value="">All modalities</option>
+        <option value="Reiki">Reiki</option>
+        <option value="Sound Healing">Sound Healing</option>
+        <option value="Breathwork">Breathwork</option>
+        <option value="Aura Cleansing">Aura Cleansing</option>
+        <option value="Past Life Regression">Past Life Regression</option>
+        <option value="Meditation">Meditation</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="padding-top: 0;">
+  <div class="container">
+    <div id="experts-grid" class="experts-grid"></div>
+  </div>
+</section>
+
+<div class="booking-overlay" id="booking-overlay" style="display:none;">
+  <div class="booking-modal glass">
+    <button class="booking-close" id="booking-close" aria-label="Close">×</button>
+    <h2 id="booking-title">Book a session</h2>
+    <p class="text-muted" id="booking-expert-name"></p>
+
+    <form id="booking-form">
+      <div class="field">
+        <label for="booking-date">Date</label>
+        <input type="date" id="booking-date" required>
+      </div>
+      <div class="field">
+        <label for="booking-time">Time</label>
+        <input type="time" id="booking-time" required>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Confirm booking</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{{ url_for('static', filename='js/page/experts.js') }}"></script>
+{% endblock %}
